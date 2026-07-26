@@ -1,4 +1,5 @@
 import { getSearchResults } from "../api.js";
+import { createMovieCard } from "../components/movieCard.js";
 
 export function renderSearch() {
   const main = document.querySelector(".mainContent");
@@ -62,7 +63,9 @@ export function renderSearch() {
         return;
       }
 
-      feed.innerHTML = data.results.map(movieCard).join("");
+     const movies = data.results;
+
+      feed.innerHTML = createMovieCard(movies);
     } catch (error) {
       console.error(error);
 
@@ -83,51 +86,3 @@ export function renderSearch() {
   });
 }
 
-function movieCard(movie) {
-  const title = movie.title || movie.name;
-
-  const poster = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "";
-
-  return `
-
-    <article class="movieCard">
-
-      <img
-        class="cardImg"
-        src="${poster}"
-        alt="${title}"
-      >
-
-
-      <div class="movieCardContent">
-
-        <h2>
-          ${title}
-        </h2>
-
-
-        <p>
-          ⭐ ${movie.vote_average?.toFixed(1) || "N/A"}
-        </p>
-
-
-        <p>
-          ${movie.overview || "No description available."}
-        </p>
-
-
-        <button
-          class="viewDetails"
-          data-id="${movie.id}"
-        >
-          View Details
-        </button>
-
-      </div>
-
-    </article>
-
-  `;
-}

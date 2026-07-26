@@ -9,11 +9,11 @@ export async function renderTrending() {
       Trending
     </h1>
 
+    
+    <section class="contentFeed">
     <p class="mutedText">
       Loading trending movies...
     </p>
-
-    <section class="contentFeed">
     </section>
   `;
 

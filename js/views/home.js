@@ -4,6 +4,8 @@ import {
   getTopRatedMovies,
 } from "../api.js";
 
+import { createMovieCard } from "../components/movieCard.js";
+
 export async function renderHome() {
   const main = document.querySelector(".mainContent");
 
@@ -50,84 +52,36 @@ export async function renderHome() {
     </section>
   `;
 
-  await Promise.all([loadTrending(), loadPopular(), loadTopRated()]);
+  await Promise.all([
+    renderSection("#trendingFeed", getTrendingMovies),
+    renderSection("#popularFeed", getPopularMovies),
+    renderSection("#topRatedFeed", getTopRatedMovies),
+  ]);
 }
 
-async function loadTrending() {
-  const feed = document.querySelector("#trendingFeed");
+async function renderSection(feedSelector, request) {
+  const feed = document.querySelector(feedSelector);
 
   try {
-    const data = await getTrendingMovies();
+    const data = await request();
 
-    feed.innerHTML = data.results.slice(0, 10).map(movieCard).join("");
-  } catch {
-    feed.innerHTML = "<p>Unable to load trending movies.</p>";
-  }
-}
-
-async function loadPopular() {
-  const feed = document.querySelector("#popularFeed");
-
-  try {
-    const data = await getPopularMovies();
-
-    feed.innerHTML = data.results.slice(0, 10).map(movieCard).join("");
-  } catch {
-    feed.innerHTML = "<p>Unable to load popular movies.</p>";
-  }
-}
-
-async function loadTopRated() {
-  const feed = document.querySelector("#topRatedFeed");
-
-  try {
-    const data = await getTopRatedMovies();
-
-    feed.innerHTML = data.results.slice(0, 10).map(movieCard).join("");
-  } catch {
-    feed.innerHTML = "<p>Unable to load top rated movies.</p>";
-  }
-}
-
-function movieCard(movie) {
-  const title = movie.title || movie.name;
-
-  const poster = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : "";
-
-  const year = movie.release_date ? movie.release_date.slice(0, 4) : "";
-
-  return `
-    <article class="movieCard">
-
-      <img
-        class="cardImg"
-        src="${poster}"
-        alt="${title}"
-      >
-
-      <div class="movieCardContent">
-
-        <h3>
-          ${title}
-        </h3>
-
-        <p>
-          ⭐ ${movie.vote_average.toFixed(1)}
-          • ${year}
+    if (!data.results?.length) {
+      feed.innerHTML = `
+        <p class="mutedText">
+          No results found.
         </p>
+      `;
+      return;
+    }
 
-        <button
-          class="viewDetails"
-          data-id="${movie.id}"
-          data-type="${movie.media_type || "movie"}"
-        >
-          View Details
-        </button>
+    feed.innerHTML = createMovieCard(data.results.slice(0, 10));
+  } catch (error) {
+    console.error(error);
 
-      </div>
-
-    </article>
-  `;
+    feed.innerHTML = `
+      <p class="mutedText">
+        Failed to load this section.
+      </p>
+    `;
+  }
 }
