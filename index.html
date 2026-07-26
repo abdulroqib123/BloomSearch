@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | BloomSearch</title>
+
+    <!--SCYBUD UI-->
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/css/variables.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/css/layout.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/components/sidebar/sidebar.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/components/buttons/nav-buttons.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/css/typography.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/components/buttons/global-buttons.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://scybud.github.io/scybud-ui/components/buttons/modals.css"
+/>
+
+<!--APP CSS-->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/home.css">
+
+</head>
+<body>
+    
+
+     <button class="toggleSidebar">
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+
+    <!--MAIN-->
+
+    <main class="main">
+      <aside class="sidebar">
+     <header class="sidebarHeader">
+          <div class="logo">BloomSearch</div>
+        </header>
+<div class="divider"></div> 
+
+        <nav class="sidebarNav">
+          <button type="button" data-nav="home" class="navBtn">🏠 Home</button>
+          <button type="button" data-nav="movies" class="navBtn">🎬 Movies</button>
+          <button type="button" data-nav="tv" class="navBtn">📺 TV Shows</button>
+          <button type="button" data-nav="top-rated" class="navBtn">⭐ Top Rated</button>
+          <button type="button" data-nav="trending" class="navBtn">🔥 Trending</button>
+          <button type="button" data-nav="search" class="navBtn">🔍 Search</button>
+        </nav>
+      </aside>
+
+      <!--MAIN CONTENT-->
+
+      <article class="mainContent">
+        <h1 class="pageTitle">Home</h1>
+
+        <section class="contentFeed">
+          <!--CONTENT-->
+
+          <div class="movieCard">
+            <div
+              class="cardImg skeletonItem"
+            ></div>
+
+            <div class="skeletonMovieCardContent">
+              <h2 class="skeletonCardTitle skeletonItem">
+              </h2>
+
+              <p class="skeletonCardDesc skeletonItem">
+               
+              </p>
+            </div>
+
+            <div class="cardMeta">
+              <span class="skeletonSource skeletonItem"></span>
+
+              <span class="skeletonTime skeletonItem"></span>
+            </div>
+          </div>
+          
+           <div class="movieCard">
+            <div
+              class="cardImg skeletonItem"
+            ></div>
+
+            <div class="skeletonMovieCardContent">
+              <h2 class="skeletonCardTitle skeletonItem">
+              </h2>
+
+              <p class="skeletonCardDesc skeletonItem">
+               
+              </p>
+            </div>
+
+            <div class="cardMeta">
+              <span class="skeletonSource skeletonItem"></span>
+
+              <span class="skeletonTime skeletonItem"></span>
+            </div>
+          </div>
+
+           <div class="movieCard">
+            <div
+              class="cardImg skeletonItem"
+            ></div>
+
+            <div class="skeletonMovieCardContent">
+              <h2 class="skeletonCardTitle skeletonItem">
+              </h2>
+
+              <p class="skeletonCardDesc skeletonItem">
+               
+              </p>
+            </div>
+
+            <div class="cardMeta">
+              <span class="skeletonSource skeletonItem"></span>
+
+              <span class="skeletonTime skeletonItem"></span>
+            </div>
+          </div>
+
+           <div class="movieCard">
+            <div
+              class="cardImg skeletonItem"
+            ></div>
+
+            <div class="skeletonMovieCardContent">
+              <h2 class="skeletonCardTitle skeletonItem">
+              </h2>
+
+              <p class="skeletonCardDesc skeletonItem">
+               
+              </p>
+            </div>
+
+            <div class="cardMeta">
+              <span class="skeletonSource skeletonItem"></span>
+
+              <span class="skeletonTime skeletonItem"></span>
+            </div>
+          </div>
+        </section>
+      </article>
+
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

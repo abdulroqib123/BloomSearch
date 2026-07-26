@@ -1,0 +1,116 @@
+/* ARTICLE PAGE */
+
+.contentFeed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface-secondary);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+.movieCard:hover {
+  transform: translateY(-2px);
+  background: var(--hover-bg);
+}
+.cardImg,
+.placeholderImg {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.placeholderImg {
+  background-color: var(--hover-bg); /* complete black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted); /* muted gray icon/text */
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-md);
+}
+
+.placeholderImg::before {
+  content: "🖼️ No Image";
+  opacity: 0.7;
+}
+
+.movieCardContent {
+  margin: var(--space-sm) var(--space-md);
+}
+.cardTitle {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-md);
+  font-weight: 700;
+}
+.cardDesc {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+
+  margin-bottom: var(--space-lg);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-sm) var(--space-sm);
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.searchBar {
+    margin: var(--space-lg) auto;
+display: flex;
+justify-content: center;
+width: 100%;
+}
+#searchInput {
+    display: block;
+    background: var(--input-bg);
+    width: 100%;
+    padding: var(--space-md);
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    border: 1px solid var(--border-primary);
+    outline: none;
+    max-width: 800px;
+    color: var(--text-primary);
+    transition: border 0.2s ease;
+}
+#searchInput:hover {
+    border-color: var(--border-secondary);
+}
+#searchInput:focus {
+    border: 3px solid #8c52ff31;
+}
+#searchBtn {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    border-radius: 0 var(--space-sm) var(--space-sm) 0;
+    color: var(--text-primary);
+    background: var(--primary);
+    padding: var(--space-sm) var(--space-md);
+    transition: opacity 0.5s ease;
+}
+#searchBtn:hover {
+    opacity: 0.7;
+}
