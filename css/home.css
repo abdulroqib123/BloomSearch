@@ -94,16 +94,14 @@
   border-radius: 18px;
 
   transition:
-    transform .25s ease,
+    background .25s ease,
     border-color .25s ease,
     box-shadow .25s ease;
 }
 
 .movieCard:hover {
-  transform: scale(1.02);
-
   border-color: var(--border-secondary);
-
+background: var(--surface-primary);
   box-shadow: 0 16px 40px rgba(0,0,0,.18);
 }
 
@@ -202,7 +200,7 @@
   justify-content: center;
   align-items: center;
 
-  padding: 14px 18px;
+  padding: var(--space-sm) var(--space-md);
 
   border: none;
   border-radius: 12px;
