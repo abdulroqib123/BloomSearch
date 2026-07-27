@@ -1,0 +1,290 @@
+/* ===========================
+   DETAILS PAGE
+=========================== */
+
+.detailsPage {
+  width: min(1400px, 80%);
+  margin: 40px auto 80px;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+
+  margin-bottom: 3rem;
+}
+
+.poster {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.heroInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroInfo h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  margin-bottom: .75rem;
+}
+
+.tagline {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+/* ===========================
+   FACTS
+=========================== */
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.facts span,
+.genres span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: .55rem .95rem;
+
+  border-radius: 999px;
+
+  background: var(--surface-secondary);
+
+  color: var(--text-primary);
+
+  border: 1px solid var(--border-primary);
+}
+
+/* ===========================
+   GENRES
+=========================== */
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+
+  margin-bottom: 2rem;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+section {
+  margin-bottom: 4rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+
+  font-size: 1.6rem;
+
+  font-weight: 700;
+}
+
+section p {
+  color: var(--muted);
+
+  line-height: 1.8;
+}
+
+/* ===========================
+   TRAILER
+=========================== */
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: none;
+
+  border-radius: 18px;
+}
+
+/* ===========================
+   PROVIDERS
+=========================== */
+
+.providers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.provider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+
+  padding: .8rem 1rem;
+
+  background: var(--surface-secondary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 14px;
+}
+
+.provider img {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 10px;
+}
+
+/* ===========================
+   CAST
+=========================== */
+
+.cast {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(140px,1fr));
+
+  gap: 1rem;
+}
+
+.actor {
+  background: var(--surface-secondary);
+
+  border: 1px solid var(--border-primary);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.actor:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--border-secondary);
+}
+
+.actor img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+}
+
+.actor p {
+  padding: 1rem;
+
+  color: var(--text-primary);
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+/* ===========================
+   RECOMMENDATIONS
+=========================== */
+
+.recommendations {
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+
+  padding-bottom: .5rem;
+}
+
+.recommendation {
+  flex: 0 0 180px;
+
+  cursor: pointer;
+}
+
+.recommendation img {
+  width: 100%;
+
+  border-radius: 14px;
+
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+}
+
+.recommendation p {
+  margin-top: .75rem;
+
+  color: var(--text-primary);
+
+  text-align: center;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+.recommendations::-webkit-scrollbar {
+  height: 8px;
+}
+
+.recommendations::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 999px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .poster {
+    max-width: 340px;
+    margin: auto;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .detailsPage {
+    width: 92%;
+  }
+
+  .facts,
+  .genres {
+    gap: .5rem;
+  }
+
+  .facts span,
+  .genres span {
+    font-size: .9rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+}

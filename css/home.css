@@ -1,13 +1,75 @@
 /* ---------- HOME SECTIONS ---------- */
 
 .homeSection {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
 }
 
+.homeSection h2:first-child {
+    margin: calc(var(--space-md) * 2) 0 var(--space-md);
+
+}
 .homeSection h2 {
-  margin-bottom: var(--space-lg);
+  margin: calc(var(--space-xl) * 2) 0 var(--space-md);
   font-size: 1.35rem;
   font-weight: 700;
+}
+
+.homeSection .contentFeed {
+  display: flex;
+  gap: var(--space-md);
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: var(--space-sm);
+
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+/* SCYBUD / LOGHUE DARK MODE SCROLLBAR */
+.homeSection .contentFeed {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) var(--bg-primary);
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+.homeSection .contentFeed::-webkit-scrollbar {
+  height: 8px;
+  background: var(--surface-secondary);
+}
+
+.homeSection .contentFeed::-webkit-scrollbar-thumb {
+  background: var(--border-secondary); 
+  border-radius: 999px;
+}
+
+.homeSection .contentFeed::-webkit-scrollbar-thumb:hover {
+  background: var(--border-primary); 
+}
+
+
+.homeSection .contentFeed .movieCard {
+  flex: 0 0 260px;
+  width: 260px;
+  overflow: hidden;
+}
+
+.homeSection .contentFeed .movieCard .movieCardContent {
+  position: relative;
+  padding: 0;
+  margin-bottom: var(--space-sm);
+  height: fit-content;
+}
+.homeSection .contentFeed .movieCard .movieCardContent  .cardMeta {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  margin: 0 auto;
+  max-height: fit-content;
+}
+.homeSection .contentFeed .movieCard .btn {
+  margin: var(--space-md) 0 0;
 }
 
 /* ---------- CONTENT GRID ---------- */
@@ -187,7 +249,7 @@ max-width: 800px;
 
   padding: 1rem 1.1rem;
 
-  border-radius: 14px 0 0 14px;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 
   outline: none;
 
@@ -203,7 +265,7 @@ max-width: 800px;
 
   border: none;
 
-  border-radius: 0 14px 14px 0;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
 
   background: var(--primary);
 

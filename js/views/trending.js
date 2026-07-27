@@ -3,6 +3,7 @@ import { createMovieCard } from "../components/movieCard.js";
 
 export async function renderTrending() {
   const main = document.querySelector(".mainContent");
+document.title = "Trending | Bloomsearch";
 
   main.innerHTML = `
     <h1 class="pageTitle">

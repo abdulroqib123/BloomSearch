@@ -4,7 +4,7 @@ import {
   getTopRatedMovies,
 } from "../api.js";
 
-import { createMovieCard } from "../components/movieCard.js";
+import { createHomeMovieCard, createMovieCard } from "../components/movieCard.js";
 
 export async function renderHome() {
   const main = document.querySelector(".mainContent");
@@ -74,7 +74,7 @@ async function renderSection(feedSelector, request) {
       return;
     }
 
-    feed.innerHTML = createMovieCard(data.results.slice(0, 10));
+    feed.innerHTML = createHomeMovieCard(data.results.slice(0, 10));
   } catch (error) {
     console.error(error);
 

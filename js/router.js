@@ -4,7 +4,6 @@ import { renderMovies } from "./views/movies.js";
 import { renderTV } from "./views/tv.js";
 import { renderTopRated } from "./views/topRated.js";
 import { renderSearch } from "./views/search.js";
-import { renderDetails } from "./views/details.js";
 
 const routes = {
   home: renderHome,
@@ -13,7 +12,6 @@ const routes = {
   tv: renderTV,
   "top-rated": renderTopRated,
   search: renderSearch,
-  details: renderDetails,
 };
 
 export function navigate(route, params = {}) {

@@ -67,3 +67,14 @@ padding: calc(var(--space-xl) * 2) var(--space-sm);
   background-color: var(--bg-primary);
   transform: translateX(4px);
 }
+
+.backBtn {
+  position: fixed;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  background: var(--secondary);
+  padding: var(--space-xs) var(--space-sm);
+  color: #000;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-bold);
+}

@@ -21,7 +21,7 @@
 
 html {
   width: 100%;
-  height: 100dvh;
+  min-height: 100%;
 }
 body {
   background: var(--bg-primary);
@@ -31,7 +31,7 @@ body {
 }
 
 .pageTitle {
-  margin: 0 var(--space-sm) var(--space-md);
+  margin: var(--space-md) var(--space-sm) 0;
 }
 .toggleSidebar {
   display: none;
@@ -88,7 +88,7 @@ body {
     width: 38px;
     height: 38px;
     border: none;
-    background: var(--bg--primary);
+    background: var(--surface-primary);
     color: var(--color);
     border-radius: 8px;
     cursor: pointer;
@@ -124,7 +124,7 @@ body {
   margin: var(--space-sm) 0;
   }
   .mainContent {
-    margin-left: 0;
+    margin: var(--space-xl) 0;
   }
 }
 .sidebarNav {
@@ -162,4 +162,29 @@ body {
 .mutedText {
   color: var(--muted);
   margin-bottom: var(--space-xs);
+}
+
+
+.footer {
+  margin-top: 5rem;
+  padding: 2rem;
+
+  border-top: 1px solid var(--border-primary);
+
+  text-align: center;
+}
+
+.footer p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.tmdbLogo {
+  height: 28px;
+  opacity: .9;
+  transition: opacity .2s ease;
+}
+
+.tmdbLogo:hover {
+  opacity: 1;
 }

@@ -3,6 +3,7 @@ import { createMovieCard } from "../components/movieCard.js";
 
 export async function renderTopRated() {
   const main = document.querySelector(".mainContent");
+document.title = "Top Rated | Bloomsearch";
 
   main.innerHTML = `
 

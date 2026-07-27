@@ -2,6 +2,8 @@ import { getTv } from "../api.js";
 import { createMovieCard } from "../components/movieCard.js";
 
 export async function renderTV() {
+  document.title = "TV Shows | Bloomsearch";
+
   document.querySelector(".mainContent").innerHTML = `
 
 <h1>

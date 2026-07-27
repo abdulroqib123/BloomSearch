@@ -3,6 +3,7 @@ import { createMovieCard } from "../components/movieCard.js";
 
 export function renderSearch() {
   const main = document.querySelector(".mainContent");
+document.title = "Search | Bloomsearch";
 
   main.innerHTML = `
 
