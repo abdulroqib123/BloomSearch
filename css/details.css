@@ -209,6 +209,8 @@ iframe {
   gap: 1rem;
 
   overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-secondary) var(--bg-primary);
 
   padding-bottom: .5rem;
 }
@@ -243,10 +245,11 @@ iframe {
 
 .recommendations::-webkit-scrollbar {
   height: 8px;
+  background: var(--surface-secondary);
 }
 
 .recommendations::-webkit-scrollbar-thumb {
-  background: var(--border-secondary);
+   background: var(--border-secondary); 
   border-radius: 999px;
 }
 
