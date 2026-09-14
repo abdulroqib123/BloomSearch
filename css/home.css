@@ -58,7 +58,6 @@
 .homeSection .contentFeed .movieCard .movieCardContent {
   position: relative;
   padding: 0;
-  margin-bottom: var(--space-sm);
   height: fit-content;
 }
 .homeSection .contentFeed .movieCard .movieCardContent  .cardMeta {
@@ -68,9 +67,7 @@
   margin: 0 auto;
   max-height: fit-content;
 }
-.homeSection .contentFeed .movieCard .btn {
-  margin: var(--space-md) 0 0;
-}
+
 
 /* ---------- CONTENT GRID ---------- */
 
@@ -203,7 +200,7 @@ background: var(--surface-primary);
   padding: var(--space-sm) var(--space-md);
 
   border: none;
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
 
   cursor: pointer;
 
@@ -215,7 +212,7 @@ background: var(--surface-primary);
 
   transition:
     transform .2s ease,
-    opacity .2s ease;
+    opacity .2s ease, color 0.3s ease;
 }
 
 .btn:hover {
